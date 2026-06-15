@@ -23,9 +23,9 @@ Entwickelt für eine Gemeinde der Neuapostolischen Kirche – Gottesdienste mitt
 ## Funktionen
 
 - **Weboberfläche** zur Pflege der Bibelworte, erreichbar im lokalen Netz oder über den eingebauten WLAN-Access-Point
-- **Automatischer Online-Feed**: Bibelworte werden täglich von einer GitHub-Pages-JSON-Datei abgerufen
+- **Automatischer Online-Feed**: Bibelworte werden täglich von einer GitHub-Pages-JSON-Datei abgerufen (WLAN erforderlich)
 - **Manuelle Einträge** für einzelne Tage, die den Feed gezielt überschreiben
-- **CSV-Upload** für die Planung mehrerer Wochen
+- **CSV-Upload** für die Planung mehrerer Wochen - bei offline-Betrieb
 - **Thermodruck** des Bibelwortes per Knopfdruck (zentriert, mit Umlauten)
 - **E-Paper-Display** zeigt das aktuelle Wort dauerhaft an
 - **WLAN-Fallback**: Startet automatisch einen Access Point, wenn kein bekanntes Netz erreichbar ist
@@ -40,10 +40,10 @@ Entwickelt für eine Gemeinde der Neuapostolischen Kirche – Gottesdienste mitt
 | microSD-Karte | 16 GB+ | ca. 6 € |
 | Thermodrucker | Goojprt QR203, 58 mm, USB | ca. 30 € |
 | Thermorollen | 58 mm (57 mm passt auch), Ø innen 12 mm, außen max. 40 mm | ca. 1 €/Rolle |
-| Display | Waveshare e-Paper HAT (z. B. 2.13" oder 4.2" für größere Schrift) | 15–35 € |
+| Display | Waveshare e-Paper HAT (z. B. 2.13" oder 4.2" für größere Schrift) | 15–35 € | - Display ist optional
 | Taster | beliebiger Druckschalter | < 1 € |
 | LED + Widerstand | LED + 220 Ω | < 1 € |
-| Netzteil Pi | 5 V Micro-USB | ca. 8 € |
+| Netzteil Pi | 5 V Micro-USB | ca. 8 € | Oder DC/DC-Wandler 9V -->5V
 | Netzteil Drucker | 5–9 V, **mind. 2 A** (separat, nicht über den Pi!) | ca. 8 € |
 
 > **Tipp:** Das Display möglichst als **HAT direkt aufstecken** statt einzeln zu verdrahten – das vermeidet Verpolungsfehler. Für ältere Gemeindemitglieder ist ein größeres Display (4.2") gut lesbar.
@@ -153,7 +153,7 @@ Die Weboberfläche ist nun erreichbar unter `http://bibelwort.local`.
 
 Damit die Bibelworte automatisch geladen werden:
 
-1. Dieses Repository als **öffentliches** Repo auf GitHub anlegen
+1. Dieses Repository als **öffentliches** Repo auf GitHub anlegen - alternativ das vorhandene nehmen.
 2. Die `bibelworte.json` mit den eigenen Bibelworten pflegen (Format siehe unten)
 3. Unter *Settings → Pages*: Source „Deploy from a branch", Branch `main`, Ordner `/ (root)`, **Save**
 4. Nach 1–2 Minuten ist die Datei erreichbar unter:
