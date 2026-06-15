@@ -1,0 +1,17 @@
+# Beispiel-Konfiguration für den WLAN-Access-Point
+# Ziel: /etc/hostapd/hostapd.conf
+#
+# WICHTIG: channel muss fest gesetzt sein (channel=0 / automatische
+# Kanalwahl funktioniert auf dem Pi Zero 2W nicht zuverlässig).
+# Am besten denselben Kanal wie das Heim-/Kirchen-WLAN verwenden.
+# Aktuellen Kanal ermitteln mit:  iwlist wlan0 scan | grep -E "ESSID|Channel"
+
+interface=wlan0
+ssid=Bibelwort
+wpa_passphrase=gottesdienst
+hw_mode=g
+channel=11
+wpa=2
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=TKIP
+rsn_pairwise=CCMP

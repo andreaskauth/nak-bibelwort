@@ -1,0 +1,10 @@
+# Beispiel-Zusatz für den Access-Point-Betrieb
+# Ans Ende von /etc/dnsmasq.conf anhängen
+#
+# Sorgt dafür, dass im AP-Modus verbundene Geräte eine IP bekommen
+# und alle Anfragen auf den Pi (192.168.4.1) umgeleitet werden
+# (Captive-Portal-Verhalten).
+
+interface=wlan0
+dhcp-range=192.168.4.2,192.168.4.20,255.255.255.0,24h
+address=/#/192.168.4.1
